@@ -17,10 +17,11 @@ app.set('view engine', 'ejs');
 // middlewares
 app.use(morgan('dev'));
 app.use(myConnection(mysql, {
+  connectionLimit : 100,
   host: 'mysql57',
   user: 'root',
   password: 'secret',
-  port: 3306,
+  port: 33061,
   database: 'crudnodejsmysql'
 }, 'single'));
 app.use(express.urlencoded({extended: false}));
